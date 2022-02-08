@@ -2,7 +2,7 @@ import { Formik, Form, Field } from 'formik';
 import { TextField } from 'formik-mui';
 import { Button } from '@mui/material';
 import Container from '@mui/material/Container';
-import { dataNameTypes } from '../data/dataNameTypes';
+import { dataNameTypes } from 'data';
 
 interface Values {
     email: string;

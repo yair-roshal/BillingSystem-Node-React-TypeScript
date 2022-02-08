@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { ClientForm } from 'components';
 import { IClient } from '../interfaces/IClient.interface';
-import { initialData } from '../data/initialData';
+import { initialData } from 'data';
 
 export const CreateClient = () => {
     const onSubmit = (clientObject: IClient) => {

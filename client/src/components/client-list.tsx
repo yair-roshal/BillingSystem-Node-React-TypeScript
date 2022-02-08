@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { ClientTableRow } from 'components';
-import { dataNameTypes } from '../data/dataNameTypes';
+import { dataNameTypes } from 'data';
 import { IClientID } from '../interfaces/IClientID.interface';
 
 export const ClientList = () => {
