@@ -3,9 +3,7 @@ import axios from 'axios';
 import { ClientForm } from './ClientForm';
 import { IClientObject } from '../interfaces/IClient.interface';
 
-export const EditClient = (props: any) => {
-  console.log('props.history :>> ', props.history);
-  console.log('props.match.params.id :>> ', props.match.params.id);
+export const EditClient = (props: any) => { 
   console.log('props111 :>> ', props);
 
   const [formValues, setFormValues] = useState({

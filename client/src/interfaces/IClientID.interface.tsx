@@ -1,4 +1,6 @@
-export interface IClient {
+  
+export interface IClientID {
+  _id: 'number';
   customer_id: 'number';
   first_name: 'string';
   last_name: 'string';
@@ -13,4 +15,3 @@ export interface IClient {
   cerdit_card_type: 'string';
   cerdit_card_number: 'number';
 }
- 

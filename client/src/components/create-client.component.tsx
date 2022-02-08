@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ClientForm } from './ClientForm';
-import { IClientObject } from '../interfaces/IClient.interface';
+import { IClient } from '../interfaces/IClient.interface';
 
 export const CreateClient = () => {
   const [formValues, setFormValues] = useState({
@@ -34,8 +34,7 @@ export const CreateClient = () => {
   //   const one = new Promise<string>((resolve, reject) => {
   // Promise<Array<IArticleItem>>
 
-  const onSubmit = (clientObject: any) => {
-    // const onSubmit = (clientObject: IClientObject) => {
+  const onSubmit = (clientObject: IClient) => { 
     axios
       .post('http://localhost:4000/clients/create-client', clientObject)
       .then((res) => {
@@ -45,8 +44,7 @@ export const CreateClient = () => {
       .catch((err) => alert('Something went wrong'));
   };
 
-  // Return client form
-  return (
+   return (
     <ClientForm initialValues={formValues} onSubmit={onSubmit}>
       Create Client
     </ClientForm>
