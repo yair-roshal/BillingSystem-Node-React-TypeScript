@@ -11,18 +11,16 @@ import Paper from '@mui/material/Paper';
 import {dataNameTypes} from "../data/dataNameTypes"
 
 
-interface DetailParams {
-	id: string;
+// interface IClient {
+// 	id: string;
+// }
+
+interface IClients {
+	 [...IClientObject]
 }
 
-interface Props {
-	required: string;
-	// match?: match<DetailParams>;
-	ownerName?: string;
-}
- 
 export const ClientList = () => {
-	const [clients, setClients] = useState([]);
+	const [clients, setClients] = useState<IClients>([]);
 
 	useEffect(() => {
 		axios
@@ -36,8 +34,8 @@ export const ClientList = () => {
 	}, []);
 
 	const DataTable = () => {
-		return clients.map((res, i) => {
-			return <ClientTableRow obj={res} key={i} />
+		return clients.map((res, index) => {
+			return <ClientTableRow obj={res} key={index} />
 
 		});
 	};
@@ -48,7 +46,7 @@ export const ClientList = () => {
 				<TableHead>
 					<TableRow>
 
-						{Object.keys(dataNameTypes).map((keyOfObj: string, index) => (
+						{Object.keys(dataNameTypes).map((keyOfObj: string, index:number) => (
 							<TableCell key={index} align="center">{keyOfObj}</TableCell>
 						))}
 

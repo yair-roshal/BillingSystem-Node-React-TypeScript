@@ -1,4 +1,3 @@
-// let mongoose = require("mongoose"),
 let express = require("express"),
     router = express.Router();
 
