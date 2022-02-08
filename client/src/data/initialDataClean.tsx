@@ -1,0 +1,15 @@
+export const initialDataClean = {
+    customer_id: ' ',
+    first_name: ' ',
+    last_name: ' ',
+    email: ' ',
+    gender: ' ',
+    country: ' ',
+    city: ' ',
+    street: ' ',
+    phone: ' ',
+    total_price: ' ',
+    currency: ' ',
+    cerdit_card_type: ' ',
+    cerdit_card_number: ' ',
+};

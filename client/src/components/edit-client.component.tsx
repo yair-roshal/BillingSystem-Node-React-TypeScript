@@ -2,24 +2,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ClientForm } from './client-form';
 import { IClient } from '../interfaces/IClient.interface';
+import { initialDataClean } from '../data/initialDataClean';
 
 export const EditClient = (props: any) => {
  
-    const [formValues, setFormValues] = useState({
-        customer_id: 'number',
-        first_name: 'string',
-        last_name: 'string',
-        email: 'string',
-        gender: 'string',
-        country: 'string',
-        city: 'string',
-        street: 'string',
-        phone: 'number',
-        total_price: 'number',
-        currency: 'string',
-        cerdit_card_type: 'string',
-        cerdit_card_number: 'number',
-    });
+    const [formValues, setFormValues] = useState( initialDataClean );
 
     const onSubmit = (clientObject: IClient) => {
         axios

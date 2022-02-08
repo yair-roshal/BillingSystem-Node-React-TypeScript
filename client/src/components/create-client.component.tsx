@@ -5,8 +5,7 @@ import { IClient } from '../interfaces/IClient.interface';
 import { initialData } from '../data/initialData';
 
 export const CreateClient = () => {
-  
-  
+   
   const onSubmit = (clientObject: IClient) => { 
     axios
       .post('http://localhost:4000/clients/create-client', clientObject)
