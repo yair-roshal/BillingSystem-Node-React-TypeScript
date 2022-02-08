@@ -2,54 +2,47 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let clientSchema = new Schema({
-
     customer_id: {
-        type: Number
+        type: Number,
     },
     first_name: {
-        type: String
+        type: String,
     },
     last_name: {
-        type: String
+        type: String,
     },
     email: {
-        type: String
+        type: String,
     },
     gender: {
-        type: String
+        type: String,
     },
     country: {
-        type: String
+        type: String,
     },
     city: {
-        type: String
+        type: String,
     },
     street: {
-        type: String
+        type: String,
     },
     phone: {
-        type: Number
+        type: Number,
     },
     total_price: {
-        type: Number
+        type: Number,
     },
     currency: {
-        type: String
+        type: String,
     },
     cerdit_card_type: {
-        type: String
+        type: String,
     },
     cerdit_card_number: {
-        type: Number
-    }
-
-
-
-
-
-
+        type: Number,
+    },
 }, {
-    collection: 'clients'
-})
+    collection: 'clients',
+}, );
 
-module.exports = mongoose.model('Client', clientSchema)
+module.exports = mongoose.model('Client', clientSchema);

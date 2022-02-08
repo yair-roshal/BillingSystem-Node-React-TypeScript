@@ -1,9 +1,9 @@
-let express = require("express"),
+let express = require('express'),
     router = express.Router();
 
-let clientSchema = require("../models/Client");
+let clientSchema = require('../models/Client');
 
-router.post("/create-client", (req, res, next) => {
+router.post('/create-client', (req, res, next) => {
     clientSchema.create(req.body, (error, data) => {
         if (error) {
             return next(error);
@@ -14,7 +14,7 @@ router.post("/create-client", (req, res, next) => {
     });
 });
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
     clientSchema.find((error, data) => {
         if (error) {
             return next(error);
@@ -24,16 +24,16 @@ router.get("/", (req, res) => {
     });
 });
 
-router.route("/update-client/:id")
+router
+    .route('/update-client/:id')
     .get((req, res) => {
-        clientSchema.findById(
-            req.params.id, (error, data) => {
-                if (error) {
-                    return next(error);
-                } else {
-                    res.json(data);
-                }
-            });
+        clientSchema.findById(req.params.id, (error, data) => {
+            if (error) {
+                return next(error);
+            } else {
+                res.json(data);
+            }
+        });
     })
 
 .put((req, res, next) => {
@@ -47,24 +47,22 @@ router.route("/update-client/:id")
                 console.log(error);
             } else {
                 res.json(data);
-                console.log("Client updated successfully !");
+                console.log('Client updated successfully !');
             }
-        }
+        },
     );
 });
 
-router.delete("/delete-client/:id",
-    (req, res, next) => {
-        clientSchema.findByIdAndRemove(
-            req.params.id, (error, data) => {
-                if (error) {
-                    return next(error);
-                } else {
-                    res.status(200).json({
-                        msg: data,
-                    });
-                }
+router.delete('/delete-client/:id', (req, res, next) => {
+    clientSchema.findByIdAndRemove(req.params.id, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.status(200).json({
+                msg: data,
             });
+        }
     });
+});
 
 module.exports = router;
