@@ -1,7 +1,7 @@
  
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ClientForm } from './ClientForm';
+import { ClientForm } from './client-form';
 import { IClient } from '../interfaces/IClient.interface';
 
 export const CreateClient = () => {

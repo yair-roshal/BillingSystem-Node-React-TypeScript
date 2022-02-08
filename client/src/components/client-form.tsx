@@ -1,24 +1,23 @@
 import { Formik, Form, Field } from 'formik';
-import { TextField } from 'formik-mui';
-
+import { TextField } from 'formik-mui'; 
 import { Button } from '@mui/material';
-import Container from '@mui/material/Container';
-
+import Container from '@mui/material/Container'; 
 import { dataNameTypes } from '../data/dataNameTypes';
 import { initialData } from '../data/initialData';
-
-interface Values {
-  name: string;
-  email: string;
-  password: string;
+ 
+interface Values { 
+  email: string; 
 }
 
 export const ClientForm = (props: any) => {
+  console.log('props ClientForm:>> ', props);
+  console.log('props.initialValues ClientForm:>> ', props.initialValues);
   return (
     <>
       <Container maxWidth="sm">
         <Formik
-          initialValues={initialData}
+         {...props}
+           initialValues={ props.initialValues  }
           validate={(values) => {
             const errors: Partial<Values> = {};
             if (!values.email) {
@@ -37,7 +36,7 @@ export const ClientForm = (props: any) => {
         >
           {({ submitForm }) => (
             <Form>
-              {Object.entries(dataNameTypes).map((keyElem: any, index: any) => (
+              {Object.entries(dataNameTypes).map((keyElem: any, index: number) => (
                 <>
                   <Field
                     style={{
