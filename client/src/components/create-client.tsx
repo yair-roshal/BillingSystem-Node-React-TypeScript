@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { ClientForm } from 'components';
-import { IClient } from '../interfaces/IClient.interface';
+import { IClient } from 'interfaces';
 import { initialData } from 'data';
 
 export const CreateClient = () => {

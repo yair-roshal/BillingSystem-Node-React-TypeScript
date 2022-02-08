@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ClientForm } from 'components';
-import { IClient } from '../interfaces/IClient.interface';
+import { IClient } from 'interfaces';
 import { initialDataClean } from 'data';
 
 export const EditClient = (props: any) => {
