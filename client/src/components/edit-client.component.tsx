@@ -5,8 +5,7 @@ import { IClient } from '../interfaces/IClient.interface';
 import { initialDataClean } from '../data/initialDataClean';
 
 export const EditClient = (props: any) => {
- 
-    const [formValues, setFormValues] = useState( initialDataClean );
+    const [formValues, setFormValues] = useState(initialDataClean);
 
     const onSubmit = (clientObject: IClient) => {
         axios
@@ -27,40 +26,11 @@ export const EditClient = (props: any) => {
     useEffect(() => {
         axios
             .get(
-                'http://localhost:4000/clients/update-client/' + 
+                'http://localhost:4000/clients/update-client/' +
                     props.match.params.id,
             )
             .then((res) => {
-                const {
-                    customer_id,
-                    first_name,
-                    last_name,
-                    email,
-                    gender,
-                    country,
-                    city,
-                    street,
-                    phone,
-                    total_price,
-                    currency,
-                    cerdit_card_type,
-                    cerdit_card_number,
-                } = res.data;
-                setFormValues({
-                    customer_id,
-                    first_name,
-                    last_name,
-                    email,
-                    gender,
-                    country,
-                    city,
-                    street,
-                    phone,
-                    total_price,
-                    currency,
-                    cerdit_card_type,
-                    cerdit_card_number,
-                });
+                setFormValues({ ...res.data });
             })
             .catch((err) => console.log(err));
     }, []);
@@ -71,8 +41,6 @@ export const EditClient = (props: any) => {
             onSubmit={onSubmit}
             enableReinitialize
         >
-                {console.log('formValues :>> ', formValues) }
-
             Update Client
         </ClientForm>
     );
