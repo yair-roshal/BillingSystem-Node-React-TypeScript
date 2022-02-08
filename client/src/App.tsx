@@ -1,9 +1,9 @@
 import "./App.css";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import {CreateClient} from "./components/create-client.component";
-import {EditClient} from "./components/edit-client.component";
-import {ClientList} from "./components/client-list.component";
-import {Navbar} from "./components/Navbar/Navbar";
+import {CreateClient} from "components";
+import {EditClient} from "components";
+import {ClientList} from "components";
+import {Navbar} from "components";
 
 export const App = () => {
 	return (

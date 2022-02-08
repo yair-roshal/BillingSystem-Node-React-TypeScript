@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ClientForm } from './client-form';
+import { ClientForm } from 'components';
 import { IClient } from '../interfaces/IClient.interface';
 import { initialDataClean } from '../data/initialDataClean';
 

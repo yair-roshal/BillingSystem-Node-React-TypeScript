@@ -1,1 +1,6 @@
  export * from "./Navbar"
+ export {ClientForm} from "./client-form"
+ export {ClientList} from "./client-list"
+ export {ClientTableRow} from "./client-table-row"
+ export {CreateClient} from "./create-client"
+ export {EditClient} from "./edit-client"

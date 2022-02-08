@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
-import Button from '@mui/material/Button'; 
+import Button from '@mui/material/Button';
 import { IClientID } from '../interfaces/IClientID.interface';
 
 interface IProps {
@@ -32,7 +32,6 @@ export const ClientTableRow = (props: IProps) => {
                         index != 0 &&
                         index != 14 && (
                             <TableCell key={index} align="center">
-                                {' '}
                                 {valueOfObj}
                             </TableCell>
                         ),

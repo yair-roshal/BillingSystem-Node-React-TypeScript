@@ -7,10 +7,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { ClientTableRow } from './client-table-row';
+import { ClientTableRow } from 'components';
 import { dataNameTypes } from '../data/dataNameTypes';
 import { IClientID } from '../interfaces/IClientID.interface';
- 
+
 export const ClientList = () => {
     const [clients, setClients] = useState<IClientID[]>([]);
 
@@ -26,7 +26,7 @@ export const ClientList = () => {
     }, []);
 
     const DataTable = () => {
-        return clients.map((res:IClientID, index: number) => {
+        return clients.map((res: IClientID, index: number) => {
             return <ClientTableRow obj={res} key={index} />;
         });
     };

@@ -3,15 +3,12 @@ import { TextField } from 'formik-mui';
 import { Button } from '@mui/material';
 import Container from '@mui/material/Container';
 import { dataNameTypes } from '../data/dataNameTypes';
-import { initialData } from '../data/initialData';
 
 interface Values {
     email: string;
 }
 
 export const ClientForm = (props: any) => {
-    console.log('props ClientForm:>> ', props);
-    console.log('props.initialValues ClientForm:>> ', props.initialValues);
     return (
         <>
             <Container maxWidth="sm">
